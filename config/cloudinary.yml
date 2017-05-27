@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: docmzynp2
+  api_key: '463778253488594'
+  api_secret: lPjTV91hpQMiPjEq6G8e-Q2wMC0
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: docmzynp2
+  api_key: '463778253488594'
+  api_secret: lPjTV91hpQMiPjEq6G8e-Q2wMC0
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: docmzynp2
+  api_key: '463778253488594'
+  api_secret: lPjTV91hpQMiPjEq6G8e-Q2wMC0
+  enhance_image_tag: true
+  static_image_support: false

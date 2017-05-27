@@ -1,0 +1,26 @@
+<%= render "shared/internal_navbar" %>
+
+<div class="container">
+  <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+
+<%= render :partial => "case_large", :locals => {:c => @case}%>
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h3> Post a new update </h3>
+        <%= bootstrap_form_for([@case, Update.new], layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-8") do |form| %>
+          <%= form.text_field :title, label: "Short title", required: true %>
+          <% possible_domains = [["Social", "social"], ["Financial", "financial"], ["Education", "education"]] %>
+
+<%= form.select :domain, possible_domains, label: "Domain", required: true %>
+          <%= form.text_area :body, label: "Full text", placeholder: "Enter the full text of your update", required: true %>
+          <%= form.text_field :external_link, label: "External link"%>
+          <%= form.submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+     <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+      <%= render :partial => :update, :collection => @case.updates.reverse, as: :u %>
+    </div>

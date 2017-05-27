@@ -1,0 +1,11 @@
+<%= render "shared/internal_navbar" %>
+
+<div class="container">
+  <h2><%= @user.name %></h2>
+
+  <h3>Recent updates:</h3>
+  <%= render :partial => "updates/update_with_case", :collection => @user.recent_updates, :as => :u %>
+
+  <h3>Recent cases:</h3>
+  <%= render :partial => :case, :collection => @user.recent_cases, as: :c %>
+</div>

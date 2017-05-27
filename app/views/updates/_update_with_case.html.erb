@@ -1,0 +1,18 @@
+<div class="panel panel-default">
+  <div class="media">
+    <div class="media-left">
+      <div style="width: 100px; overflow: hidden;">
+      <%= link_to(cl_image_tag(u.case.case_image.path, class: 'img-responsive'), u.case) %>
+      </div>
+    </div>
+    <div class="media-body">
+      <span class="label label-primary"><%= link_to(u.domain, domain_filter_path(u.domain), style: "color: white") %></span>
+      <h4 class="media-heading">
+        <%= u.title %>
+      </h4>
+      <%= u.body %>
+    </div>
+  </div>
+</div>
+
+User.where(name: nil).each { |user| user.update_attributes(name: "User #{user.id}") }

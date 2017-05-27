@@ -1,0 +1,8 @@
+<%= render "shared/internal_navbar" %>
+
+<div class="container">
+  <h2><%= params[:domain_type] %></h2>
+
+  <h3>Recent updates</h3>
+  <%= render :partial => "updates/update_with_case", :collection => @updates, as: :u %>
+</div>

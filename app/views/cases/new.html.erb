@@ -1,0 +1,13 @@
+	<%= render "shared/internal_navbar" %>
+
+	<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
+	  <div class="panel panel-default form-panel">
+	    <h2> New Case</h2>
+	    <%= bootstrap_form_for(@case) do |form| %>
+	      <%= form.text_field :title, label: "Case title", placeholder: "Enter your case title"%>
+	      <%= form.attachinary_file_field :case_image, label: "Case image"%>
+	      <%= form.text_area :body, label: "Case description", placeholder: "Enter the description of your case" %>
+	      <%= form.submit %>
+	    <% end %>
+	  </div>
+	</div>

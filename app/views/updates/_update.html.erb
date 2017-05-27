@@ -1,0 +1,13 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title"> <%= u.title %> </h4>
+  </div>
+  <div class="panel-body">
+    <%= simple_format u.body %>
+  </div>
+  <div class="panel-footer">
+  <span class="label label-primary"><%= link_to(u.domain, domain_filter_path(u.domain), style: "color: white") %></span>
+    <span class="label label-info">External link: <%= link_to(u.external_link, u.external_link)%></span>
+    <span class="label label-default"><%= link_to(u.user.name, user_path(u.user), style: "color: white") %></span>
+  </div>
+</div>
